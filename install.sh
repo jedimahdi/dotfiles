@@ -120,6 +120,10 @@ if $use_i3 ; then
     cp -r $DOTFILES_DIR/.i3 ~
   fi
 
+  if [[ ! -d ~/.wallpapers ]]; then
+    cp -r $DOTFILES_DIR/.wallpapers ~
+  fi
+
   ln -sfv "$DOTFILES_DIR/.config/i3/config" ~/.config/i3/
   ln -sfv "$DOTFILES_DIR/.i3blocks.conf" ~
 
