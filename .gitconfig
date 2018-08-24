@@ -1,0 +1,10 @@
+[user]
+	name = Mahdi Seyyedan
+	email = seyedmahdiseydan78@yahoo.com
+
+[github]
+  user = jedimahdi
+
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = vim
