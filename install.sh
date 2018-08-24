@@ -5,7 +5,8 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 use_i3=true
 
-sudo pacman -S --needed --noconfirm zsh git wget curl neovim python2-neovim python-neovim python-pip nodejs npm tmux ack fzf the_silver_searcher termite ranger htop playerctl ruby
+# Install zsh
+sudo pacman -S --needed --noconfirm zsh git wget curl
 
 if [[ ! -d ~/.config ]]; then mkdir ~/.config; fi
 
@@ -64,6 +65,14 @@ ln -sfv "$DOTFILES_DIR/zsh/zsh_aliases" ~/.zsh/
 # Colorls
 gem install rdoc
 gem install colorls
+
+
+
+####################
+# install all needed packages
+####################
+
+sudo pacman -S --needed --noconfirm neovim python2-neovim python-neovim python-pip nodejs npm tmux ack fzf the_silver_searcher termite ranger htop playerctl ruby
 
 ####################
 # .gitconfig and .gitignore_global
