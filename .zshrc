@@ -37,10 +37,6 @@ source $HOME/.zsh/zsh_aliases
 # # Syntax highlighting and tab completion
 autoload -U compinit && compinit
 
-
-#autoload -Uz compinit
-
-
 export LANG=en_US.UTF-8
 
 export EDITOR='nvim'

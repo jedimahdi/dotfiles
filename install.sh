@@ -5,7 +5,7 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 use_i3=true
 
-sudo pacman -S --needed --noconfirm zsh git wget curl neovim python2-neovim python-neovim python-pip nodejs npm tmux ack fzf the_silver_searcher termite ranger htop playerctl
+sudo pacman -S --needed --noconfirm zsh git wget curl neovim python2-neovim python-neovim python-pip nodejs npm tmux ack fzf the_silver_searcher termite ranger htop playerctl ruby
 
 if [[ ! -d ~/.config ]]; then mkdir ~/.config; fi
 
@@ -61,6 +61,10 @@ if [[ ! -d ~/.zsh ]]; then mkdir ~/.zsh; fi
 ln -sfv "$DOTFILES_DIR/.zshrc" ~
 ln -sfv "$DOTFILES_DIR/zsh/zsh_aliases" ~/.zsh/
 
+# Colorls
+gem install rdoc
+gem install colorls
+
 ####################
 # .gitconfig and .gitignore_global
 ####################
@@ -109,7 +113,7 @@ ln -sfv "$DOTFILES_DIR/.config/ranger/rc.conf" ~/.config/ranger/
 ####################
 
 if $use_i3 ; then
-  sudo pacman -S --needed --noconfirm i3 feh compton redshift rofi xorg-xprop
+  sudo pacman -S --needed --noconfirm feh compton redshift rofi xorg-xprop
   sudo pip install i3ipc
 
   if [[ ! -d ~/.i3 ]]; then
