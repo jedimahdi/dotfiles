@@ -147,7 +147,8 @@ if $use_i3 ; then
   ####################
 
   if [[ ! -d ~/.config/rofi ]]; then mkdir ~/.config/rofi; fi
-  ln -sfv "$DOTFILES_DIR/.config/rofi/rc.conf" ~/.config/rofi/
+  ln -sfv "$DOTFILES_DIR/.config/rofi/config" ~/.config/rofi/
+  ln -sfv "$DOTFILES_DIR/.config/rofi/theme.rasi" ~/.config/rofi/
 fi
 
 
@@ -157,4 +158,5 @@ fi
 ####################
 
 ln -sfv "$DOTFILES_DIR/.Xresources" ~
+ln -sfv "$DOTFILES_DIR/.xbindkeysrc" ~
 ln -sfv "$DOTFILES_DIR/.xinitrc" ~

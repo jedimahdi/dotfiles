@@ -1,6 +1,6 @@
 alias updateArch="sudo pacman -Syu"
 alias vim=nvim
-alias mirrorUpdate="sudo reflector --latest 250 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+alias mirrorUpdate="sudo pacman-mirrors --fasttrack && sudo pacman -Syyu"
 #alias ls="colorls"
 alias lc='colorls -lA --sd'
 alias ls='colorls'
