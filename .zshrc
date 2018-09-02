@@ -7,7 +7,8 @@ export GOPATH=$HOME/Repositories/Work/go
 export PATH=$PATH:$GOPATH/bin
 
 
-ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
+ZSH_THEME=""
 export SPACESHIP_CHAR_SYMBOL="❯ "
 export SPACESHIP_JOBS_SYMBOL="»"
 export SPACESHIP_TIME_SHOW=false
@@ -36,6 +37,9 @@ source $HOME/.zsh/zsh_aliases
 
 # # Syntax highlighting and tab completion
 autoload -U compinit && compinit
+
+autoload -U promptinit; promptinit
+prompt pure
 
 export LANG=en_US.UTF-8
 

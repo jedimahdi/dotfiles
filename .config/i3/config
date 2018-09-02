@@ -21,7 +21,8 @@ floating_modifier $mod
 bindsym $mod+Return exec termite
 bindsym $mod+z exec firefox
 bindsym $mod+x exec telegram-desktop
-bindsym $mod+c exec spotify
+bindsym $mod+c exec google-chrome-stable
+bindsym $mod+b exec spotify
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -131,14 +132,26 @@ for_window    [class="Firefox"]              move container to workspace number 
 # for_window    [class="Wire"]                 move container to $workspace3
 for_window    [class="Telegram"]     move container to workspace number 3
 for_window    [class="Spotify"]     move container to workspace number 4
-# for_window    [class="Thunderbird"]          move container to $workspace4
-# for_window    [class="TeamViewer"]           move container to $workspace9, floating enable, sticky disable
+for_window    [class="Steam"]    floating enable
 # for_window [class="xfreerdp"] move container to $workspace9
 
 # Always open some programs on specified workspace
 # assign [class="Gnome-terminal"] workspace number 1
 # assign [class="Firefox"] workspace number 2
 # assign [class="Telegram"] workspace number 3
+#
+# https://github.com/ValveSoftware/steam-for-linux/issues/1040
+for_window [class="^Steam$" title="^Friends$"] floating enable
+for_window [class="^Steam$" title="Steam - News"] floating enable
+for_window [class="^Steam$" title=".* - Chat"] floating enable
+for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title=".* - event started"] floating enable
+for_window [class="^Steam$" title=".* CD key"] floating enable
+for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
+for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
+for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+for_window [title="^Steam Keyboard$"] floating enable
+
 
 
 # reload the configuration file
@@ -216,8 +229,8 @@ bar {
     i3bar_command i3bar -t
     strip_workspace_numbers no
     #output eDP-1-1
-    tray_output eDP-1-1
-    # tray_output primary
+    # tray_output eDP-1-1
+    tray_output primary
     mode dock
     position top
     height 24
@@ -235,8 +248,8 @@ bar {
 
 
 # Startup programs
-# exec_always --no-startup-id feh --bg-scale ~/.wallpapers/eternity.jpg # Wallpaper
-exec_always --no-startup-id feh --bg-scale ~/.wallpapers/where_halloween_smiles_are_born.jpg # Wallpaper
+exec_always --no-startup-id feh --bg-scale ~/.wallpapers/village.jpg # Wallpaper
+# exec_always --no-startup-id feh --bg-scale ~/.wallpapers/where_halloween_smiles_are_born.jpg # Wallpaper
 exec_always --no-startup-id python3 ~/.i3/i3-autoname-workspaces.py
 exec --no-startup-id compton -b
 exec --no-startup-id redshift

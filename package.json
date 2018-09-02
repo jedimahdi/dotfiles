@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "global": "^4.3.2",
+    "pure-prompt": "^1.8.0"
+  }
+}

@@ -1,9 +1,9 @@
 alias updateArch="sudo pacman -Syu"
 alias vim=nvim
-alias mirrorUpdate="sudo pacman-mirrors --fasttrack && sudo pacman -Syyu"
+alias updateMirror="sudo pacman-mirrors --fasttrack && sudo pacman -Syyu"
 #alias ls="colorls"
 alias lc='colorls -lA --sd'
-alias ls='colorls'
+alias l='colorls'
 alias torConfig="sudo nvim /etc/tor/torrc"
 alias torRestart="sudo systemctl restart tor.service"
 alias wmClass="xprop WM_CLASS"
