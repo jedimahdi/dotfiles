@@ -6,7 +6,7 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 use_i3=true
 
 # Install zsh
-sudo pacman -S --needed --noconfirm zsh git wget curl
+sudo pacman -S --needed --noconfirm zsh git wget
 
 if [[ ! -d ~/.config ]]; then mkdir ~/.config; fi
 
