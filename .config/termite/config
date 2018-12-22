@@ -9,7 +9,7 @@ mouse_autohide = false
 [colors]
 foreground = rgb(239, 240, 235)
 foreground_bold = rgb(239, 240, 235)
-background = rgb(40, 42, 56)
+background = #1b2b34
 
 # If unset, will reverse foreground and background
 highlight = #2f2f2f

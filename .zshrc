@@ -3,8 +3,15 @@ export ZSH=$HOME/.oh-my-zsh
 TERM=xterm-256color
 export TERM=xterm-256color
 
-export GOPATH=$HOME/Repositories/Work/go
-export PATH=$PATH:$GOPATH/bin
+export GOPATH=$HOME/apps/go
+export GOBIN=$GOPATH/bin
+PATH=$PATH:$GOPATH:$GOBIN
+
+export NVIM_GTK_NO_HEADERBAR=1
+export NVIM_GTK_PREFER_DARK_THEME=1
+export NVIM_GTK_NO_WINDOW_DECORATION=1
+
+fpath=( "$HOME/.zfunctions" $fpath )
 
 
 # ZSH_THEME="spaceship"

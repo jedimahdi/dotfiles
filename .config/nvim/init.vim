@@ -79,6 +79,10 @@ Plug 'mpickering/hlint-refactor-vim'                    " Fix lint issues
 """"" Javascript
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 
+""""" Java
+" Plug 'artur-shaik/vim-javacomplete2'
+
+
 " Functionalities
 "Plug 'tpope/vim-sensible'
 
@@ -134,6 +138,10 @@ colorscheme OceanicNext
 let g:airline_theme='oceanicnext'
 
 
+" set guifont=SauceCodePro\ Nerd\ Font\ Semibold\ 10
+set guifont=FiraCode\ Medium\ 10
+
+
 " make the highlighting of tabs and other non-text less annoying
 highlight SpecialKey ctermfg=236
 highlight NonText ctermfg=236
@@ -158,7 +166,7 @@ set termguicolors
 
 """ Other Configurations
 filetype plugin indent on
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
 set incsearch ignorecase smartcase hlsearch
 set ruler laststatus=2 showcmd showmode
 set list listchars=trail:»,tab:»-
@@ -230,7 +238,7 @@ let g:airline_section_warning = ''
 
 "Neomake
 " When writing a buffer (no delay).
-"call neomake#configure#automake('w') 
+"call neomake#configure#automake('w')
 
 "let g:neomake_open_list = 2
 
@@ -296,9 +304,9 @@ let g:vim_json_syntax_conceal = 0
 " Deoplete-----------------------------------
 set runtimepath+=~/.config/nvim/plugged/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
-" let g:python_host_prog  = '/path/to/python'
-" let g:python3_host_prog = '/path/to/python3'
-let g:deoplete#sources#go#gocode_binary = '~/Repositories/Work/go/src/github.com/nsf/gocode'
+let g:python_host_prog  = '/home/mahdi/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/home/mahdi/.pyenv/versions/neovim3/bin/python'
+let g:deoplete#sources#go#gocode_binary = '~/apps/go/src/github.com/nsf/gocode'
 
 call deoplete#custom#source('_', 'min_pattern_length', 1)
 call deoplete#custom#source('around', 'rank', 100)
@@ -324,6 +332,9 @@ let g:UltiSnipsUsePythonVersion = 3
 """" ALE
 let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
 "let b:ale_fixers = ['prettier', 'eslint']
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_save = 1
+" let g:ale_lint_on_enter = 0
 
 """" Incsearch
 let g:incsearch#auto_nohlsearch = 1
@@ -383,7 +394,7 @@ command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 " Prettier-----------------------------------
-let g:prettier#config#tab_width = 2
+let g:prettier#config#tab_width = 4
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#single_quote = 'true'
 
@@ -404,6 +415,10 @@ autocmd FileType htmldjango inoremap {# {#  #}<left><left><left>
 " Markdown and Journal
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType journal setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" Java
+" autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
 
 """ Custom Functions
 

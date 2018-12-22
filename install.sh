@@ -121,7 +121,6 @@ ln -sfv "$DOTFILES_DIR/.config/ranger/rc.conf" ~/.config/ranger/
 # i3
 ####################
 
-if $use_i3 ; then
   sudo pacman -S --needed --noconfirm feh compton redshift rofi xorg-xprop
   sudo pip install i3ipc
 
@@ -149,7 +148,6 @@ if $use_i3 ; then
   if [[ ! -d ~/.config/rofi ]]; then mkdir ~/.config/rofi; fi
   ln -sfv "$DOTFILES_DIR/.config/rofi/config" ~/.config/rofi/
   ln -sfv "$DOTFILES_DIR/.config/rofi/theme.rasi" ~/.config/rofi/
-fi
 
 
 
