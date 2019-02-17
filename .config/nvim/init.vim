@@ -16,6 +16,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'joshdick/onedark.vim'
 Plug 'mhartington/oceanic-next'
+Plug 'phanviet/vim-monokai-pro'
 
 """" Format code
 Plug 'sbdchd/neoformat'                                 " Automatically format code
@@ -82,6 +83,7 @@ Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 """"" Java
 " Plug 'artur-shaik/vim-javacomplete2'
 
+Plug 'PotatoesMaster/i3-vim-syntax'
 
 " Functionalities
 "Plug 'tpope/vim-sensible'
@@ -134,9 +136,11 @@ let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
-let g:airline_theme='oceanicnext'
+" colorscheme OceanicNext
+" let g:airline_theme='oceanicnext'
 
+colorscheme onedark
+let g:airline_theme='onedark'
 
 " set guifont=SauceCodePro\ Nerd\ Font\ Semibold\ 10
 set guifont=FiraCode\ Medium\ 10
@@ -193,6 +197,10 @@ set formatoptions-=t                                               " Don't wrap 
 set guioptions+=c
 set guioptions-=T
 set guioptions-=m
+
+" Disables automatic commenting on newline:
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 
 set clipboard=unnamed
 
@@ -452,6 +460,12 @@ function! ColorOnedark()
     IndentLinesEnable
 endfunction
 
+function! ColorOceanicNext()
+    colorscheme OceanicNext
+    let g:airline_theme='oceanicnext'
+    IndentLinesEnable
+endfunction
+
 """ Custom Mappings
 
 let mapleader=","
@@ -460,7 +474,7 @@ nmap \ <leader>q
 nmap <leader>w :TagbarToggle<CR>
 nmap <leader>ee :Colors<CR>
 nmap <leader>ea :AirlineTheme
-nmap <leader>e1 :call ColorDracula()<CR>
+nmap <leader>e1 :call ColorOceanicNext()<CR>
 nmap <leader>e2 :call ColorOnedark()<CR>
 nmap <leader>e3 :call ColorGruvbox()<CR>
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
@@ -500,6 +514,8 @@ omap <leader><tab> <plug>(fzf-maps-o)
 """" Copy to system clipboard
 nnoremap <Leader>y "+y
 vnoremap <Leader>y "+y
+vnoremap <C-c> "+y
+map <C-p> "+P
 
 """" Paste from system clipboard
 nnoremap <Leader>v "+p

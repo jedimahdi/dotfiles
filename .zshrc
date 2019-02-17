@@ -51,5 +51,7 @@ prompt pure
 export LANG=en_US.UTF-8
 
 export EDITOR='nvim'
+export TERMINAL="termite"
+PROMPT_COMMAND="$PROMPT_COMMAND; pwd > /tmp/whereami"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
